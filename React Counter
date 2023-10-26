@@ -1,0 +1,16 @@
+import React, { useState } from 'react'
+
+function App() {
+  const[count,setcount]=useState(0)
+
+  return (
+    <div style={{display:'flex',alignItems:"center",justifyContent:"center", width:"100%"}}>
+      <h2>Counter</h2>
+
+      <h2 style={{margin:"20px"}}>{count}</h2>
+      <button onClick={()=>setcount(prev=>prev+1)} style={{cursor:"pointer"}}>Increment</button>
+    </div>
+  )
+}
+
+export default App
