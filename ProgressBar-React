@@ -1,0 +1,73 @@
+# Starting of App.js
+
+
+import React, { useState } from 'react'
+import ProgressBar from './ProgressBar'
+
+function App() {
+  const[progress,setprogress]=useState(20)
+  const handleincrease=()=>{
+    setprogress((prev)=>prev+1)
+  }
+  const handleDecrease=()=>{
+    setprogress((prev) => {
+      // Ensure that the new value is not below 1
+      const newProgress = Math.max(prev - 1, 1);
+      return newProgress;
+    });
+  }
+
+
+  return (
+    <div>
+      <h2>Practising....</h2>
+      <ProgressBar progress={progress}/>
+      <button onClick={handleincrease}>Increase</button>
+      <button onClick={handleDecrease}>Decrease</button>
+    </div>
+  )
+}
+
+export default App
+
+#Ending Of App.js
+
+#Starting OF ProgressBar.js
+import React from 'react'
+import './ProgresBar.css'
+
+function ProgressBar({progress}) {
+    const progressbarstyle={
+        width:`${progress}%`,
+        height:'20px',
+        backgroundColor:'green',
+        borderRadius:'5px',
+    }
+  return (
+    <div className='progress-bar-container'>
+        <div className='progress-bar' style={progressbarstyle}>
+
+
+        </div>
+    </div>
+  )
+}
+
+export default ProgressBar
+
+#Ending Of ProgressBar.js
+
+#ProgressBar Css #Styling....
+
+
+.progress-bar-container{
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    background-color: lightgray;
+ 
+    overflow: hidden;
+}
+.progress-bar{
+    height: 100%;
+}
