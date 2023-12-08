@@ -1,0 +1,37 @@
+#i have solve react Hover Counter Question.
+#This Question is availble on Codedamn.com
+
+
+import React, { useState } from 'react'
+
+function App() {
+  const[ishovered,sethovered]=useState(false)
+  const[count,setcounter]=useState(0)
+  const btnstyl={
+    backgroundColor:ishovered?'red':"Blue",
+    color:"white",
+    fontSize:'16px',
+    padding:"10px 20px",
+    cursor:"Pointer",
+    borderRadius:"5px",
+    transition:"0.2s ease"
+  }
+  
+  const handlemouseenter=()=>{
+    sethovered(true)
+    setcounter((prev)=>prev+1)
+  }
+  const handlemouseleave=()=>{
+    sethovered(false)
+    
+  }
+  return (
+    <div>
+      <h2>Practising...</h2>
+      <button style={btnstyl} onMouseEnter={handlemouseenter} onMouseLeave={handlemouseleave}>Click Me</button>
+      <h3>{count}</h3>
+    </div>
+  )
+}
+
+export default App
